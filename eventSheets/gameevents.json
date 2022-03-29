@@ -1,0 +1,2738 @@
+{
+	"name": "GameEvents",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "FlatSpace v2.0\nAuthor: Felipe V. Calderan\nE-Mail: fvcalderan@gmail.com\nWebsite: fvcalderan.github.io\n\n=======================================================================\nTODO\n-------------------------------------------------------------------------------------------------------------------------\n- Menu\n======================================================================="
+		},
+		{
+			"eventType": "comment",
+			"text": "Game Setup"
+		},
+		{
+			"eventType": "comment",
+			"text": "Stars-related constants"
+		},
+		{
+			"eventType": "variable",
+			"name": "addStarsAmount",
+			"type": "number",
+			"initialValue": "20",
+			"comment": "Amount of stars to be added each time",
+			"isStatic": true,
+			"isConstant": true,
+			"sid": 293187437927760
+		},
+		{
+			"eventType": "variable",
+			"name": "addStarsInterval",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "Time between new star additions",
+			"isStatic": true,
+			"isConstant": true,
+			"sid": 126798078872152
+		},
+		{
+			"eventType": "comment",
+			"text": "Meteors-related constants"
+		},
+		{
+			"eventType": "variable",
+			"name": "meteorsWorth",
+			"type": "number",
+			"initialValue": "10",
+			"comment": "How much a meteor is worth in score",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 650126324284333
+		},
+		{
+			"eventType": "variable",
+			"name": "addMeteorsAmount",
+			"type": "number",
+			"initialValue": "8",
+			"comment": "Amount of meteors to be added each time",
+			"isStatic": true,
+			"isConstant": true,
+			"sid": 404689289997072
+		},
+		{
+			"eventType": "variable",
+			"name": "addMeteorsInterval",
+			"type": "number",
+			"initialValue": "3",
+			"comment": "Time between new meteor additions",
+			"isStatic": true,
+			"isConstant": true,
+			"sid": 859794860166004
+		},
+		{
+			"eventType": "comment",
+			"text": "Powerups-related constants"
+		},
+		{
+			"eventType": "variable",
+			"name": "livesPowerUpAmount",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "Amount of extra lives per Extra Life PowerUp",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 760838680521165
+		},
+		{
+			"eventType": "variable",
+			"name": "fastFirePowerUpTime",
+			"type": "number",
+			"initialValue": "10",
+			"comment": "How long fast fire rate lasts",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 309450869867486
+		},
+		{
+			"eventType": "variable",
+			"name": "slowPowerUpStrength",
+			"type": "number",
+			"initialValue": "0.5",
+			"comment": "By how much the game will be slowed down",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 935193102028602
+		},
+		{
+			"eventType": "variable",
+			"name": "addPowerUpInterval",
+			"type": "number",
+			"initialValue": "10",
+			"comment": "Time between new power up additions",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 771522941945520
+		},
+		{
+			"eventType": "comment",
+			"text": "Game constants"
+		},
+		{
+			"eventType": "variable",
+			"name": "initialPlayerLives",
+			"type": "number",
+			"initialValue": "2",
+			"comment": "How many extra lives the player starts with",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 865303361122799
+		},
+		{
+			"eventType": "variable",
+			"name": "increaseScoreInterval",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "Every how many sconds the player's score should increase",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 892982182629153
+		},
+		{
+			"eventType": "variable",
+			"name": "timedScoreIncreaseWorth",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "How many points the player gets each defined interval of time",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 900576808936663
+		},
+		{
+			"eventType": "variable",
+			"name": "minimumGameSpeed",
+			"type": "number",
+			"initialValue": "0.5",
+			"comment": "How slow the game can go",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 998281416527487
+		},
+		{
+			"eventType": "variable",
+			"name": "speedIncrement",
+			"type": "number",
+			"initialValue": "0.025",
+			"comment": "Amount of speed to be added each time",
+			"isStatic": false,
+			"isConstant": true,
+			"sid": 347178927140763
+		},
+		{
+			"eventType": "comment",
+			"text": "Game Variables"
+		},
+		{
+			"eventType": "variable",
+			"name": "playerName",
+			"type": "string",
+			"initialValue": "",
+			"comment": "Player's name",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 856588179466606
+		},
+		{
+			"eventType": "variable",
+			"name": "playerHighScore",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Player's highest score of all time",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 345159843957412
+		},
+		{
+			"eventType": "variable",
+			"name": "playerScore",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Player's Score (objective)",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 525147268339718
+		},
+		{
+			"eventType": "variable",
+			"name": "playerFastFiring",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "Player's fire rate increased",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 227795084579144
+		},
+		{
+			"eventType": "variable",
+			"name": "gameSpeed",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "How fast the game (stars, meteors and items) move",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 529025094236402
+		},
+		{
+			"eventType": "variable",
+			"name": "playerLives",
+			"type": "number",
+			"initialValue": "3",
+			"comment": "Player's Lives",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 149608000470726
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Functions",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Stars Functions",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "addStars",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": true,
+							"functionParameters": [
+								{
+									"name": "amount",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "Number of stars to be added",
+									"sid": 615204870394562
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 773256929258831,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 102234638250525,
+											"parameters": {
+												"name": "\"i\"",
+												"start-index": "1",
+												"end-index": "amount"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 909980900620400,
+											"parameters": {
+												"object-to-create": "Star",
+												"layer": "\"Background\"",
+												"x": "random(24, LayoutWidth-16)",
+												"y": "random(-512-15*gameSpeed, -64)",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Star",
+											"sid": 824529032457157,
+											"parameters": {
+												"instance-variable": "proximity",
+												"value": "int(random(0,4))"
+											}
+										}
+									],
+									"sid": 976512940152105
+								}
+							]
+						},
+						{
+							"functionName": "addStarsImmediately",
+							"functionDescription": "Add stars to the layout immediately",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": true,
+							"functionParameters": [
+								{
+									"name": "amount",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "Number of stars to be added",
+									"sid": 422858128884544
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 767789506587713,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 627000461318307,
+											"parameters": {
+												"name": "\"i\"",
+												"start-index": "1",
+												"end-index": "amount"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 893058708112822,
+											"parameters": {
+												"object-to-create": "Star",
+												"layer": "\"Background\"",
+												"x": "random(24, LayoutWidth-16)",
+												"y": "random(-256,LayoutHeight-16)",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Star",
+											"sid": 883878862649083,
+											"parameters": {
+												"instance-variable": "proximity",
+												"value": "int(random(0,4))"
+											}
+										}
+									],
+									"sid": 477361220367778
+								}
+							]
+						},
+						{
+							"functionName": "moveStars",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": true,
+							"functionParameters": [
+								{
+									"name": "speed",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "Base speed in which things are moving",
+									"sid": 495541636788559
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 252118329406876,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 220868307820012,
+											"parameters": {
+												"object": "Star"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "Star",
+											"sid": 827346386418693,
+											"parameters": {
+												"frame-number": "Self.proximity"
+											}
+										},
+										{
+											"id": "set-y",
+											"objectClass": "Star",
+											"sid": 717146557721069,
+											"parameters": {
+												"y": "Self.Y + speed * dt * (32 + 32* Self.proximity + random(-16, 16))"
+											}
+										}
+									],
+									"sid": 287587392944099
+								}
+							]
+						}
+					],
+					"sid": 518581876807103
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Meteor Functions",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "addMeteors",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": true,
+							"functionParameters": [
+								{
+									"name": "amount",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "Number of stars to be added",
+									"sid": 430333084571020
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 446617685868701,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 442869897603850,
+											"parameters": {
+												"name": "\"i\"",
+												"start-index": "1",
+												"end-index": "amount"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 347907417770397,
+											"parameters": {
+												"object-to-create": "Meteor",
+												"layer": "\"Middleground\"",
+												"x": "random(24, LayoutWidth-16)",
+												"y": "random(-1708-64*gameSpeed, -32)",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Meteor",
+											"sid": 335998090610383,
+											"parameters": {
+												"instance-variable": "type",
+												"value": "int(random(0,3))"
+											}
+										},
+										{
+											"id": "set-speed",
+											"objectClass": "Meteor",
+											"sid": 697198525845276,
+											"behaviorType": "Rotate",
+											"parameters": {
+												"speed": "int(random(10,100))"
+											}
+										}
+									],
+									"sid": 191507993274412
+								}
+							]
+						},
+						{
+							"functionName": "moveMeteors",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": true,
+							"functionParameters": [
+								{
+									"name": "speed",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "Base speed in which things are moving",
+									"sid": 348906189382513
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 202288914126447,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 766096506796198,
+											"parameters": {
+												"object": "Meteor"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "Meteor",
+											"sid": 168821006435987,
+											"parameters": {
+												"frame-number": "Self.type"
+											}
+										},
+										{
+											"id": "set-y",
+											"objectClass": "Meteor",
+											"sid": 114329391122322,
+											"parameters": {
+												"y": "Self.Y + speed * dt * (192)"
+											}
+										}
+									],
+									"sid": 721569239144704
+								}
+							]
+						},
+						{
+							"functionName": "destroyAllMeteors",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": true,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 513130141255876,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 961022397014605,
+											"parameters": {
+												"object": "Meteor"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 429312421163718,
+											"parameters": {
+												"object-to-create": "Particles",
+												"layer": "\"Foreground\"",
+												"x": "Meteor.X",
+												"y": "Meteor.Y",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Meteor",
+											"sid": 493942700192219
+										}
+									],
+									"sid": 139263166492733
+								}
+							]
+						}
+					],
+					"sid": 105280028099893
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "PowerUp Functions",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "addPowerUp",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": true,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 438262330642472,
+									"parameters": {
+										"object-to-create": "PowerUp",
+										"layer": "\"Middleground\"",
+										"x": "random(24, LayoutWidth-16)",
+										"y": "random(-512-16*gameSpeed, -64)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "PowerUp",
+									"sid": 527679999403230,
+									"parameters": {
+										"instance-variable": "type",
+										"value": "int(random(0,3))"
+									}
+								}
+							],
+							"sid": 695545742244164
+						},
+						{
+							"functionName": "movePowerUp",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": true,
+							"functionParameters": [
+								{
+									"name": "speed",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "Base speed in which things are moving",
+									"sid": 712968872796440
+								}
+							],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 468327462669388,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 904136331673843,
+											"parameters": {
+												"object": "PowerUp"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "PowerUp",
+											"sid": 786159558255292,
+											"parameters": {
+												"frame-number": "Self.type"
+											}
+										},
+										{
+											"id": "set-y",
+											"objectClass": "PowerUp",
+											"sid": 912605380698420,
+											"parameters": {
+												"y": "Self.Y + speed * dt * (192)"
+											}
+										}
+									],
+									"sid": 118934483207848
+								}
+							]
+						},
+						{
+							"functionName": "destroyAllPowerUps",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": true,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 400230108749494,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 127682031890632,
+											"parameters": {
+												"object": "PowerUp"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 741898875155348,
+											"parameters": {
+												"object-to-create": "ParticlesPU",
+												"layer": "\"Foreground\"",
+												"x": "PowerUp.X",
+												"y": "PowerUp.Y",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "PowerUp",
+											"sid": 369487518061005
+										}
+									],
+									"sid": 520914127565829
+								}
+							]
+						}
+					],
+					"sid": 417077494210546
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Game Functions",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "startGame",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 274754807551868,
+									"parameters": {
+										"variable": "playerLives",
+										"value": "initialPlayerLives"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "lblLives",
+									"sid": 169800944370069,
+									"parameters": {
+										"text": "\"Lives: \" & playerLives"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 797707599354273,
+									"parameters": {
+										"variable": "playerScore",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "lblScore",
+									"sid": 878185811315228,
+									"parameters": {
+										"text": "\"Score: \" & playerScore"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 848737031878137,
+									"parameters": {
+										"variable": "gameSpeed",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 387453551436486,
+									"parameters": {
+										"variable": "playerFastFiring",
+										"value": "false"
+									}
+								},
+								{
+									"id": "stop-timer",
+									"objectClass": "GameManager",
+									"sid": 224365146217736,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"fastFirePowerUp\""
+									}
+								},
+								{
+									"id": "stop-timer",
+									"objectClass": "GameManager",
+									"sid": 749563025098024,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"terminatePlayerFlash\""
+									}
+								},
+								{
+									"id": "stop-timer",
+									"objectClass": "GameManager",
+									"sid": 567707029416708,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"increaseScoreInterval\""
+									}
+								},
+								{
+									"id": "stop-timer",
+									"objectClass": "GameManager",
+									"sid": 293243028790042,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"spawnStars\""
+									}
+								},
+								{
+									"id": "stop-timer",
+									"objectClass": "GameManager",
+									"sid": 386850105239459,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"spawnMeteors\""
+									}
+								},
+								{
+									"id": "stop-timer",
+									"objectClass": "GameManager",
+									"sid": 177990358735824,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"addPowerUpInterval\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "GameManager",
+									"sid": 804066719214838,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "increaseScoreInterval",
+										"type": "regular",
+										"tag": "\"increaseScore\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "GameManager",
+									"sid": 877972132748260,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "addStarsInterval",
+										"type": "regular",
+										"tag": "\"spawnStars\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "GameManager",
+									"sid": 806729552968019,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "addMeteorsInterval",
+										"type": "regular",
+										"tag": "\"spawnMeteors\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "GameManager",
+									"sid": 767698618543786,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "addPowerUpInterval",
+										"type": "regular",
+										"tag": "\"spawnPowerUp\""
+									}
+								},
+								{
+									"id": "check-item-exists",
+									"objectClass": "LocalStorage",
+									"sid": 414150869383114,
+									"parameters": {
+										"key": "\"HighScore\""
+									}
+								}
+							],
+							"sid": 417041434531123
+						}
+					],
+					"sid": 153222916895751
+				}
+			],
+			"sid": 487453454257571
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Game",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "call startGame function, which sets up many variables and checks if there's a saved High Score"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 870452516956425
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "startGame",
+							"sid": 334692797518152
+						}
+					],
+					"sid": 629818391245505,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "If not on mobile, destroy touch input buttons"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-on-mobile",
+									"objectClass": "PlatformInfo",
+									"sid": 343807184026865,
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "fireButton",
+									"sid": 953547392172413
+								},
+								{
+									"id": "destroy",
+									"objectClass": "leftButton",
+									"sid": 913288590207517
+								},
+								{
+									"id": "destroy",
+									"objectClass": "rightButton",
+									"sid": 135305283863723
+								}
+							],
+							"sid": 238110660750626
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Each second, if player is alive, increase score by the default value and increase the game speed up to a defined value"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "GameManager",
+							"sid": 549565822699019,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"increaseScore\""
+							}
+						},
+						{
+							"id": "is-on-screen",
+							"objectClass": "Player",
+							"sid": 236398790262703
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 786711318897802,
+							"parameters": {
+								"variable": "playerScore",
+								"value": "timedScoreIncreaseWorth"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lblScore",
+							"sid": 888039878038936,
+							"parameters": {
+								"text": "\"Score: \" & playerScore"
+							}
+						}
+					],
+					"sid": 610974951959853,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 957272973915722,
+									"parameters": {
+										"variable": "gameSpeed",
+										"comparison": 2,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 706790581511822,
+									"parameters": {
+										"variable": "gameSpeed",
+										"value": "speedIncrement"
+									}
+								}
+							],
+							"sid": 537082326518342
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 266217918257447,
+							"parameters": {
+								"key": "\"HighScore\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "get-item",
+							"objectClass": "LocalStorage",
+							"sid": 863633568411315,
+							"parameters": {
+								"key": "\"HighScore\""
+							}
+						}
+					],
+					"sid": 790327324255602
+				},
+				{
+					"eventType": "comment",
+					"text": "When the High Score value has been loaded, set playerHighScore to it"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "LocalStorage",
+							"sid": 233333980418912,
+							"parameters": {
+								"key": "\"HighScore\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 401061483298498,
+							"parameters": {
+								"variable": "playerHighScore",
+								"value": "int(LocalStorage.ItemValue)"
+							}
+						}
+					],
+					"sid": 484558350184825
+				}
+			],
+			"sid": 273720512138912
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Stars",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "On Start"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 525479899160786
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "addStarsImmediately",
+							"sid": 397362705799837,
+							"parameters": [
+								"addStarsAmount * 4"
+							]
+						}
+					],
+					"sid": 573756134320538
+				},
+				{
+					"eventType": "comment",
+					"text": "Move stars"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 131832009430804
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "moveStars",
+							"sid": 500580566794625,
+							"parameters": [
+								"gameSpeed"
+							]
+						}
+					],
+					"sid": 374989851126897
+				},
+				{
+					"eventType": "comment",
+					"text": "Delete Stars that hit the bottom of the screen"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 534416526191705,
+							"parameters": {
+								"object": "Star"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 363938594872132,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-y",
+									"objectClass": "Star",
+									"sid": 962948451107964,
+									"parameters": {
+										"comparison": 4,
+										"y-co-ordinate": "LayoutHeight + 32"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Star",
+									"sid": 665979914152655
+								}
+							],
+							"sid": 794952821328384
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Add new Stars over time"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "GameManager",
+							"sid": 683687176378161,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"spawnStars\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "addStars",
+							"sid": 435502227344133,
+							"parameters": [
+								"addStarsAmount"
+							]
+						}
+					],
+					"sid": 803418781534138
+				}
+			],
+			"sid": 846661607558977
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Meteors",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Move Meteors"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 311696865989956
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "moveMeteors",
+							"sid": 619962676242118,
+							"parameters": [
+								"gameSpeed"
+							]
+						}
+					],
+					"sid": 665161014956981
+				},
+				{
+					"eventType": "comment",
+					"text": "Move overlapping Meteors"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Meteor",
+							"sid": 118768580298957,
+							"parameters": {
+								"object": "Meteor"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Meteor",
+							"sid": 193841126549825,
+							"parameters": {
+								"x": "Self.X +choose(-32, 32)",
+								"y": "Self.Y +choose(-32, 32)"
+							}
+						}
+					],
+					"sid": 127041750918322
+				},
+				{
+					"eventType": "comment",
+					"text": "Delete Meteors that hit the bottom of the screen"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 683594479877285,
+							"parameters": {
+								"object": "Meteor"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 450466890513844,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-y",
+									"objectClass": "Meteor",
+									"sid": 390475749805394,
+									"parameters": {
+										"comparison": 4,
+										"y-co-ordinate": "LayoutHeight + 32"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Meteor",
+									"sid": 366760842523103
+								}
+							],
+							"sid": 235377581372932
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Add new Meteors over time"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "GameManager",
+							"sid": 187187404839648,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"spawnMeteors\""
+							}
+						},
+						{
+							"id": "is-on-screen",
+							"objectClass": "Player",
+							"sid": 505330863284643
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "addMeteors",
+							"sid": 697353512472544,
+							"parameters": [
+								"addMeteorsAmount + int(gameSpeed*2)"
+							]
+						}
+					],
+					"sid": 169270257929450
+				}
+			],
+			"sid": 553172262264797
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "PowerUps",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Move PowerUps"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 745290334620251
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "movePowerUp",
+							"sid": 917515133154174,
+							"parameters": [
+								"gameSpeed"
+							]
+						}
+					],
+					"sid": 792611552972234
+				},
+				{
+					"eventType": "comment",
+					"text": "Move overlapping PowerUps"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "PowerUp",
+							"sid": 636652883336876,
+							"parameters": {
+								"object": "Meteor"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Meteor",
+							"sid": 652799269340489,
+							"parameters": {
+								"x": "Self.X +choose(-32, 32)",
+								"y": "Self.Y +choose(-32, 32)"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "PowerUp",
+							"sid": 170769575561000,
+							"parameters": {
+								"x": "Self.X +choose(-32, 32)",
+								"y": "Self.Y +choose(-32, 32)"
+							}
+						}
+					],
+					"sid": 712138840258325
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "PowerUp",
+							"sid": 894715386050745,
+							"parameters": {
+								"object": "PowerUp"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "PowerUp",
+							"sid": 420120837436669,
+							"parameters": {
+								"x": "Self.X +choose(-32, 32)",
+								"y": "Self.Y +choose(-32, 32)"
+							}
+						}
+					],
+					"sid": 298327353995898
+				},
+				{
+					"eventType": "comment",
+					"text": "Delete PowerUps that hit the bottom of the screen"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 812752175438539,
+							"parameters": {
+								"object": "PowerUp"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 783034988445269,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-y",
+									"objectClass": "PowerUp",
+									"sid": 897829437629247,
+									"parameters": {
+										"comparison": 4,
+										"y-co-ordinate": "LayoutHeight + 32"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "PowerUp",
+									"sid": 408901795701987
+								}
+							],
+							"sid": 776849802385213
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Add new PowerUps over time"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "GameManager",
+							"sid": 504030565614653,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"spawnPowerUp\""
+							}
+						},
+						{
+							"id": "is-on-screen",
+							"objectClass": "Player",
+							"sid": 439847042302104
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "addPowerUp",
+							"sid": 162695063499721
+						}
+					],
+					"sid": 147363183310355
+				}
+			],
+			"sid": 189900893866609
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Stop flashing animation on start of layout"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 745422499940184
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-all-tweens",
+							"objectClass": "Player",
+							"sid": 368106311626686,
+							"behaviorType": "Tween"
+						}
+					],
+					"sid": 735567563915119
+				},
+				{
+					"eventType": "comment",
+					"text": "Define in-game player's controls"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 656199174652995,
+							"parameters": {
+								"key": 37
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 723936519930386,
+							"parameters": {
+								"gamepad": "0",
+								"button": "d-pad-left"
+							}
+						},
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 379691606444168,
+							"parameters": {
+								"object": "leftButton"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player",
+							"sid": 299148073913912,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 742846665733559,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 492488250288503,
+							"parameters": {
+								"key": 39
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 537783922012245,
+							"parameters": {
+								"gamepad": "0",
+								"button": "d-pad-right"
+							}
+						},
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 481252060795581,
+							"parameters": {
+								"object": "rightButton"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Player",
+							"sid": 519663788836874,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 895976037331671,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 369662941367236,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "is-button-down",
+							"objectClass": "Gamepad",
+							"sid": 345767517609303,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-a"
+							}
+						},
+						{
+							"id": "is-touching-object",
+							"objectClass": "Touch",
+							"sid": 156350907329641,
+							"parameters": {
+								"object": "fireButton"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 580491200306494,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Player",
+									"sid": 624734863480093,
+									"parameters": {
+										"animation": "\"Ready\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 697243642855119,
+									"parameters": {
+										"object-to-create": "PlayerBullet",
+										"layer": "\"Middleground\"",
+										"x": "Player.ImagePointX(\"Firespot\")",
+										"y": "Player.ImagePointY(\"Firespot\")",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 491061923402538,
+									"parameters": {
+										"audio-file": "fire",
+										"loop": "not-looping",
+										"volume": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 581536927065854,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 125230639386328,
+											"parameters": {
+												"variable": "playerFastFiring"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Player",
+											"sid": 546407313178658,
+											"parameters": {
+												"animation": "\"FastReloading\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 501033622872652
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 280978706594020
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Player",
+											"sid": 182361031564888,
+											"parameters": {
+												"animation": "\"Reloading\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 112600596222555
+								}
+							]
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "comment",
+					"text": "Destroy player's bullets when outside"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 858096490035210,
+							"parameters": {
+								"object": "PlayerBullet"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 290010154621894,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-outside-layout",
+									"objectClass": "PlayerBullet",
+									"sid": 760376298005341
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "PlayerBullet",
+									"sid": 592812247380502
+								}
+							],
+							"sid": 328237403366142
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Change player's animation to ready when player is done reloading"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "Player",
+							"sid": 106443592376701,
+							"parameters": {
+								"animation": "\"Reloading\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player",
+							"sid": 921458590738937,
+							"parameters": {
+								"animation": "\"Ready\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 678858493177644
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "Player",
+							"sid": 601597805405831,
+							"parameters": {
+								"animation": "\"FastReloading\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player",
+							"sid": 334440465089662,
+							"parameters": {
+								"animation": "\"Ready\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 575597675146269
+				},
+				{
+					"eventType": "comment",
+					"text": "Flash player"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 486789935843990
+						},
+						{
+							"id": "is-any-playing",
+							"objectClass": "Player",
+							"sid": 520734266907496,
+							"behaviorType": "Tween"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-effect-parameter",
+							"objectClass": "Player",
+							"sid": 578213907477778,
+							"parameters": {
+								"effect": "\"AdjustHSL\"",
+								"parameter-index": "2",
+								"value": "Player.Tween.Value(\"playerFlash\")"
+							}
+						}
+					],
+					"sid": 948750916892089
+				},
+				{
+					"eventType": "comment",
+					"text": "If flashing is playing, stop it after 1.0s"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "GameManager",
+							"sid": 570106532631161,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"terminatePlayerFlash\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 119475956851750,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-any-playing",
+									"objectClass": "Player",
+									"sid": 110906712097418,
+									"behaviorType": "Tween"
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-all-tweens",
+									"objectClass": "Player",
+									"sid": 908261278728590,
+									"behaviorType": "Tween"
+								},
+								{
+									"id": "set-effect-parameter",
+									"objectClass": "Player",
+									"sid": 558912426488813,
+									"parameters": {
+										"effect": "\"AdjustHSL\"",
+										"parameter-index": "2",
+										"value": "100"
+									}
+								}
+							],
+							"sid": 444598854987383
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "GameManager",
+							"sid": 488943043235354,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"fastFirePowerUp\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 597006111844909,
+							"parameters": {
+								"variable": "playerFastFiring",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 291935211520881
+				}
+			],
+			"sid": 756724320600067
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Interactions",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Player has successfully shot a meteor"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Meteor",
+							"sid": 250060064670553,
+							"parameters": {
+								"object": "PlayerBullet"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Destroy both elements and create particles"
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 443422202370096,
+							"parameters": {
+								"object-to-create": "Particles",
+								"layer": "\"Foreground\"",
+								"x": "Meteor.X",
+								"y": "Meteor.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Meteor",
+							"sid": 857756328238939
+						},
+						{
+							"id": "destroy",
+							"objectClass": "PlayerBullet",
+							"sid": 754987010714653
+						},
+						{
+							"type": "comment",
+							"text": "Update player's score. The bigger the meteor, the more points the player gets"
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 496245910482322,
+							"parameters": {
+								"variable": "playerScore",
+								"value": "meteorsWorth * (1 + Meteor.type)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lblScore",
+							"sid": 566558762099748,
+							"parameters": {
+								"text": "\"Score: \" & playerScore"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Player explosion sound"
+						},
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 308237923015559,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "choose(\"explode1\", \"explode2\")",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 345156984884394
+				},
+				{
+					"eventType": "comment",
+					"text": "Player was hit by a meteor"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Meteor",
+							"sid": 270743902719003,
+							"parameters": {
+								"object": "Player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Destroy all Meteors and PowerUps. Flash player"
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 332249063063078,
+							"parameters": {
+								"object-to-create": "Particles",
+								"layer": "\"Foreground\"",
+								"x": "Meteor.X",
+								"y": "Meteor.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"callFunction": "destroyAllMeteors",
+							"sid": 779881284683283
+						},
+						{
+							"callFunction": "destroyAllPowerUps",
+							"sid": 529975940231497
+						},
+						{
+							"id": "tween-value",
+							"objectClass": "Player",
+							"sid": 250699162279020,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"playerFlash\"",
+								"start-value": "100",
+								"end-value": "200",
+								"time": "0.25",
+								"ease": "easeinoutsine",
+								"destroy-on-complete": "no",
+								"loop": "yes",
+								"ping-pong": "yes"
+							}
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "GameManager",
+							"sid": 522961003883127,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "1.5",
+								"type": "once",
+								"tag": "\"terminatePlayerFlash\""
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Player explosion sound"
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 547444444185530,
+							"parameters": {
+								"audio-file": "explode2",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 714177028793920,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Just loses a life"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 955193968175321,
+									"parameters": {
+										"variable": "playerLives",
+										"comparison": 4,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 456171421547044,
+									"parameters": {
+										"variable": "playerLives",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "lblLives",
+									"sid": 503543852154428,
+									"parameters": {
+										"text": "\"Lives: \" & playerLives"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 942559494351871,
+									"parameters": {
+										"variable": "playerFastFiring",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 524244801311881
+						},
+						{
+							"eventType": "comment",
+							"text": "No more lives left? It's game over, buddy."
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 386893048872083
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Player",
+									"sid": 970485618433760
+								}
+							],
+							"sid": 673276186307522,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "If there's a new High Score, save it to local storage. Show Game Over screen"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 865249181736316,
+											"parameters": {
+												"first-value": "playerScore",
+												"comparison": 4,
+												"second-value": "playerHighScore"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-item",
+											"objectClass": "LocalStorage",
+											"sid": 839770602707393,
+											"parameters": {
+												"key": "\"HighScore\"",
+												"value": "playerScore"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 364757919295300,
+											"parameters": {
+												"variable": "playerHighScore",
+												"value": "playerScore"
+											}
+										}
+									],
+									"sid": 509583043433660
+								},
+								{
+									"eventType": "comment",
+									"text": "Fade-out the game"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-tick",
+											"objectClass": "System",
+											"sid": 949624717102479
+										}
+									],
+									"actions": [
+										{
+											"id": "set-fade-in-time",
+											"objectClass": "Fader",
+											"sid": 352933035146159,
+											"behaviorType": "Fade",
+											"parameters": {
+												"fade-in-time": "0.25"
+											}
+										},
+										{
+											"id": "set-fade-out-time",
+											"objectClass": "Fader",
+											"sid": 412305824515706,
+											"behaviorType": "Fade",
+											"parameters": {
+												"fade-out-time": "0"
+											}
+										},
+										{
+											"id": "start-fade",
+											"objectClass": "Fader",
+											"sid": 862590395438919,
+											"behaviorType": "Fade"
+										},
+										{
+											"id": "request-url",
+											"objectClass": "AJAX",
+											"sid": 917764421288463,
+											"parameters": {
+												"tag": "\"getScore\"",
+												"url": "\"https://flatspace-online-default-rtdb.firebaseio.com/hiscores.json\""
+											}
+										}
+									],
+									"sid": 392001255271999
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Get scores"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-completed",
+							"objectClass": "AJAX",
+							"sid": 825001542482251,
+							"parameters": {
+								"tag": "\"getScore\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Transform AJAX data to JSON format"
+						},
+						{
+							"id": "parse",
+							"objectClass": "JSON",
+							"sid": 595960563226265,
+							"parameters": {
+								"data": "AJAX.LastData"
+							}
+						},
+						{
+							"type": "script",
+							"script": "// Get local player's name and score\nconst pname = runtime.globalVars.playerName;\nconst pscore = runtime.globalVars.playerScore;\n\n// Using the player's name, fetch its online high-score on the database\nconst highScore = runtime.objects.JSON.getFirstInstance().getJsonDataCopy()[pname];\n\n// Set the database entry (next action) to the biggest score between the local score and online high-score.\nif (pscore < highScore) runtime.globalVars.playerScore = highScore;"
+						},
+						{
+							"id": "post-to-url",
+							"objectClass": "AJAX",
+							"sid": 602674336835026,
+							"parameters": {
+								"tag": "\"sendScore\"",
+								"url": "\"https://flatspace-online-default-rtdb.firebaseio.com/hiscores/\" & playerName & \".json\"",
+								"data": "str(playerScore)",
+								"method": "\"PUT\""
+							}
+						}
+					],
+					"sid": 799618273132265
+				},
+				{
+					"eventType": "comment",
+					"text": "When the score has been set, go to the menu"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-completed",
+							"objectClass": "AJAX",
+							"sid": 309808664716822,
+							"parameters": {
+								"tag": "\"sendScore\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 371202169441494,
+							"parameters": {
+								"layout": "Menu"
+							}
+						}
+					],
+					"sid": 151696165636630
+				},
+				{
+					"eventType": "comment",
+					"text": "Player obtained a PowerUp"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "PowerUp",
+							"sid": 721112196247259,
+							"parameters": {
+								"object": "Player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Destroy PowerUp and add effect to Player/Game"
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 468887364072069,
+							"parameters": {
+								"object-to-create": "ParticlesPU",
+								"layer": "\"Foreground\"",
+								"x": "PowerUp.X",
+								"y": "PowerUp.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "PowerUp",
+							"sid": 607366283096419
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 145950846940786,
+							"parameters": {
+								"audio-file": "gmaj",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 991910950474063,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "PowerUp",
+									"sid": 358466054417328,
+									"parameters": {
+										"instance-variable": "type",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 402430398632109,
+									"parameters": {
+										"variable": "playerLives",
+										"value": "livesPowerUpAmount"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "lblLives",
+									"sid": 413233031901464,
+									"parameters": {
+										"text": "\"Lives: \" & playerLives"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "lblPowerUp",
+									"sid": 639199697289999,
+									"parameters": {
+										"text": "\"Life\""
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "lblPowerUp",
+									"sid": 385624086772056,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetOpacity",
+										"end-value": "100",
+										"time": "0.5",
+										"ease": "easeinsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "yes"
+									}
+								}
+							],
+							"sid": 393292037468279
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "PowerUp",
+									"sid": 297805342098405,
+									"parameters": {
+										"instance-variable": "type",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-timer",
+									"objectClass": "GameManager",
+									"sid": 395134095134314,
+									"behaviorType": "Timer",
+									"parameters": {
+										"tag": "\"fastFirePowerUp\""
+									}
+								},
+								{
+									"id": "start-timer",
+									"objectClass": "GameManager",
+									"sid": 847996218191960,
+									"behaviorType": "Timer",
+									"parameters": {
+										"duration": "fastFirePowerUpTime",
+										"type": "once",
+										"tag": "\"fastFirePowerUp\""
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 544328294087181,
+									"parameters": {
+										"variable": "playerFastFiring",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "lblPowerUp",
+									"sid": 753653700185324,
+									"parameters": {
+										"text": "\"Super\""
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "lblPowerUp",
+									"sid": 679861487281299,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetOpacity",
+										"end-value": "100",
+										"time": "0.5",
+										"ease": "easeinsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "yes"
+									}
+								}
+							],
+							"sid": 129527080335819
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "PowerUp",
+									"sid": 598706002839249,
+									"parameters": {
+										"instance-variable": "type",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 131519111524944,
+									"parameters": {
+										"variable": "gameSpeed",
+										"value": "max(minimumGameSpeed, gameSpeed-slowPowerUpStrength)"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "lblPowerUp",
+									"sid": 407367657704312,
+									"parameters": {
+										"text": "\"Slower\""
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "lblPowerUp",
+									"sid": 368734297131778,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetOpacity",
+										"end-value": "100",
+										"time": "0.5",
+										"ease": "easeinsine",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "yes"
+									}
+								}
+							],
+							"sid": 574059440216893
+						}
+					]
+				}
+			],
+			"sid": 620821484737683
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Sound Control",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 119484486065964,
+							"parameters": {
+								"key": 77
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-silent",
+							"objectClass": "Audio",
+							"sid": 755268649353036,
+							"parameters": {
+								"mode": "toggle-silent"
+							}
+						}
+					],
+					"sid": 667026396515640
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 137922609106853,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-y"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-silent",
+							"objectClass": "Audio",
+							"sid": 262787499561186,
+							"parameters": {
+								"mode": "toggle-silent"
+							}
+						}
+					],
+					"sid": 811825539307173
+				}
+			],
+			"sid": 460844338731302
+		}
+	],
+	"sid": 389505685636793
+}

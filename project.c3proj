@@ -1,0 +1,545 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 28800,
+	"name": "PlaneSpace",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "gamepad",
+			"name": "Gamepad",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "PlatformInfo",
+			"name": "Platform info",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "AJAX",
+			"name": "AJAX",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Json",
+			"name": "JSON",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TextBox",
+			"name": "Text input",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Button",
+			"name": "Button",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Platform",
+			"name": "Platform",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "bound",
+			"name": "Bound to layout",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Bullet",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Timer",
+			"name": "Timer",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Rotate",
+			"name": "Rotate",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "hsladjust",
+			"name": "Adjust HSL",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "pulse",
+			"name": "Pulse",
+			"author": "Danguafer/Silexars",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "glowvertical",
+			"name": "Glow vertical",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "glowhorizontal",
+			"name": "Glow horizontal",
+			"author": "Scirra",
+			"version": "r288",
+			"bundled": false
+		}
+	],
+	"uniqueId": "prkj8gqfxf4",
+	"objectTypes": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [
+					"BGSpace",
+					"Star"
+				],
+				"subfolders": [],
+				"name": "Background"
+			},
+			{
+				"items": [
+					"Player",
+					"PlayerBullet"
+				],
+				"subfolders": [],
+				"name": "Player"
+			},
+			{
+				"items": [
+					"GameManager",
+					"Gamepad",
+					"Keyboard",
+					"Collider",
+					"LocalStorage",
+					"Touch",
+					"PlatformInfo",
+					"AJAX",
+					"JSON",
+					"Fader",
+					"Audio"
+				],
+				"subfolders": [],
+				"name": "Misc"
+			},
+			{
+				"items": [
+					"Meteor",
+					"Particles"
+				],
+				"subfolders": [],
+				"name": "Enemies"
+			},
+			{
+				"items": [
+					"ScoreLivesBox",
+					"lblLives",
+					"lblScore",
+					"lblPowerUp",
+					"leftButton",
+					"rightButton",
+					"fireButton",
+					"lblDebug",
+					"lblGameInstructions"
+				],
+				"subfolders": [],
+				"name": "UI"
+			},
+			{
+				"items": [
+					"PowerUp",
+					"ParticlesPU"
+				],
+				"subfolders": [],
+				"name": "Powerups"
+			},
+			{
+				"items": [
+					"lblTitle",
+					"lblLeaderboard",
+					"leaderboardBox",
+					"lblLeaderNames",
+					"lblLeaderScores",
+					"txtName",
+					"btnStart",
+					"highScoreBox",
+					"lblHighScore",
+					"leaderboardButton",
+					"lblInstructions"
+				],
+				"subfolders": [],
+				"name": "Menu"
+			}
+		]
+	},
+	"autosaveData": null,
+	"containers": [
+		{
+			"members": [
+				"lblLives",
+				"lblPowerUp",
+				"lblScore",
+				"ScoreLivesBox"
+			],
+			"selectMode": "normal"
+		}
+	],
+	"families": {
+		"items": [],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"ObjectRepository",
+			"Game",
+			"Menu"
+		],
+		"subfolders": []
+	},
+	"eventSheets": {
+		"items": [
+			"GameEvents",
+			"MenuEvents"
+		],
+		"subfolders": []
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [
+				{
+					"name": "explode1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 694900568757421,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "explode2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 907255719405794,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "fire.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 273327943635212,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "gmaj.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 383707864231623,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"music": {
+			"items": [
+				{
+					"name": "music.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 344467082877156,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [
+				{
+					"name": "Play-Bold.ttf",
+					"type": "application/font-sfnt",
+					"sid": 609679362732052,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Play-Regular.ttf",
+					"type": "application/font-sfnt",
+					"sid": 428766459392233,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 460916910200746,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 435600021430720,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 861861676084732,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 183960365329312,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 300590670302141,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 929796860725425,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 312777697839283,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [
+			"Timeline 1"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"properties": {
+		"description": "Infinite space shooter game.",
+		"version": "1.0.0.0",
+		"author": "Felipe V. Calderan",
+		"authorEmail": "fvcalderan@gmail.com",
+		"authorWebsite": "fvcalderan.github.io",
+		"appId": "",
+		"pixelRounding": false,
+		"zAxisScale": "normalized",
+		"fov": 0.7853981633974483,
+		"useLoaderLayout": false,
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "portrait",
+		"webgpu": "auto",
+		"gpuPreference": "high-performance",
+		"scriptsType": "module",
+		"framerateMode": "vsync",
+		"compositingMode": "standard",
+		"sampling": "nearest",
+		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "splash",
+		"preloadSounds": true,
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "https"
+	},
+	"viewportWidth": 480,
+	"viewportHeight": 854,
+	"firstLayout": "Menu"
+}

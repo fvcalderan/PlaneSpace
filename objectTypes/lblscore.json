@@ -1,0 +1,15 @@
+{
+	"name": "lblScore",
+	"plugin-id": "Text",
+	"sid": 856843869663727,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 583186189113475
+		}
+	],
+	"effectTypes": []
+}

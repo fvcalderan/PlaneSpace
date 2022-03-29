@@ -1,0 +1,55 @@
+{
+	"name": "leaderboardBox",
+	"plugin-id": "Sprite",
+	"sid": 348222430214551,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 285335372045834
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 460,
+						"height": 410,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4353982,
+						"collisionPoly": {
+							"points": [
+								0,
+								0,
+								0.5434782608695652,
+								0,
+								0.5434782608695652,
+								0.27777777777777773,
+								0,
+								0.27777777777777773
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 270501540415594,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

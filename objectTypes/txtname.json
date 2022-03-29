@@ -1,0 +1,14 @@
+{
+	"name": "txtName",
+	"plugin-id": "TextBox",
+	"sid": 226480645213922,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 244998838493899
+		}
+	]
+}

@@ -1,0 +1,15 @@
+{
+	"name": "lblLives",
+	"plugin-id": "Text",
+	"sid": 929381623997646,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 222479870954781
+		}
+	],
+	"effectTypes": []
+}

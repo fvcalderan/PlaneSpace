@@ -1,0 +1,68 @@
+{
+	"name": "PlayerBullet",
+	"plugin-id": "Sprite",
+	"sid": 657493746949490,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Bullet",
+			"sid": 709865725531438
+		}
+	],
+	"effectTypes": [
+		{
+			"effectId": "pulse",
+			"name": "Pulse"
+		},
+		{
+			"effectId": "glowvertical",
+			"name": "GlowVertical"
+		},
+		{
+			"effectId": "glowhorizontal",
+			"name": "GlowHorizontal"
+		}
+	],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5711572,
+						"collisionPoly": {
+							"points": [
+								0.375,
+								0.375,
+								0.625,
+								0.37500000000000006,
+								0.6250000000000004,
+								0.625,
+								0.375,
+								0.6250000000000004
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 495716875963866,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

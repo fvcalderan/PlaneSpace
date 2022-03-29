@@ -1,0 +1,14 @@
+{
+	"name": "btnStart",
+	"plugin-id": "Button",
+	"sid": 872948912284553,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 401905557958323
+		}
+	]
+}

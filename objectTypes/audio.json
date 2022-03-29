@@ -1,0 +1,32 @@
+{
+	"name": "Audio",
+	"plugin-id": "Audio",
+	"sid": 872520093052892,
+	"singleglobal-inst": {
+		"type": "Audio",
+		"properties": {
+			"timescale-audio": "off",
+			"save-load": "all",
+			"play-in-background": true,
+			"latency-hint": "interactive",
+			"panning-model": "hrtf",
+			"distance-model": "inverse",
+			"listener-z-height": 600,
+			"reference-distance": 600,
+			"maximum-distance": 10000,
+			"roll-off-factor": 1
+		},
+		"uid": 16,
+		"template": {
+			"mode": "none",
+			"templateName": "",
+			"sourceTemplateName": "",
+			"components": [
+				{
+					"id": "plugin",
+					"component": "[{\"key\":\"plugin\",\"state\":\"[[\\\"timescale-audio\\\",true],[\\\"save-load\\\",true],[\\\"play-in-background\\\",true],[\\\"latency-hint\\\",true],[\\\"panning-model\\\",true],[\\\"distance-model\\\",true],[\\\"listener-z-height\\\",true],[\\\"reference-distance\\\",true],[\\\"maximum-distance\\\",true],[\\\"roll-off-factor\\\",true]]\"}]"
+				}
+			]
+		}
+	}
+}

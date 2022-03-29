@@ -1,0 +1,15 @@
+{
+	"name": "lblLeaderboard",
+	"plugin-id": "Text",
+	"sid": 917060969465984,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 161502354155458
+		}
+	],
+	"effectTypes": []
+}

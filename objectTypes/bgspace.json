@@ -1,0 +1,26 @@
+{
+	"name": "BGSpace",
+	"plugin-id": "TiledBg",
+	"sid": 763358064347771,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 982989246807172
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 1,
+		"height": 1,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "png",
+		"exportQuality": 0.8,
+		"imageSpriteId": 5185156,
+		"useCollisionPoly": true
+	}
+}

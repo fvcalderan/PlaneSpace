@@ -1,0 +1,975 @@
+{
+	"name": "MenuEvents",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "leaderboardNames",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 671133448310065
+		},
+		{
+			"eventType": "variable",
+			"name": "leaderboardScores",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 555323618294578
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "BGM",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 486651295300199
+						},
+						{
+							"id": "is-any-playing",
+							"objectClass": "Audio",
+							"sid": 232796259827646,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 362448140011591,
+							"parameters": {
+								"audio-file": "music",
+								"loop": "looping",
+								"volume": "-15",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 890197724045730
+				}
+			],
+			"sid": 923619671941496
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Menu Background",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "On Start"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 996513194373534
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "addStarsImmediately",
+							"sid": 698841867593719,
+							"parameters": [
+								"addStarsAmount * 4"
+							]
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "GameManager",
+							"sid": 342433515966976,
+							"behaviorType": "Timer",
+							"parameters": {
+								"duration": "addStarsInterval",
+								"type": "regular",
+								"tag": "\"spawnStars\""
+							}
+						}
+					],
+					"sid": 940619324403596
+				},
+				{
+					"eventType": "comment",
+					"text": "Move stars"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 704190792864123
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "moveStars",
+							"sid": 798852499287934,
+							"parameters": [
+								"gameSpeed"
+							]
+						}
+					],
+					"sid": 605912972187791
+				},
+				{
+					"eventType": "comment",
+					"text": "Delete Stars that hit the bottom of the screen"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 723400491071627,
+							"parameters": {
+								"object": "Star"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 861057339468113,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-y",
+									"objectClass": "Star",
+									"sid": 670858181616319,
+									"parameters": {
+										"comparison": 4,
+										"y-co-ordinate": "LayoutHeight + 32"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Star",
+									"sid": 316036545409663
+								}
+							],
+							"sid": 676113488917222
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Add new Stars over time"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-timer",
+							"objectClass": "GameManager",
+							"sid": 935384952245465,
+							"behaviorType": "Timer",
+							"parameters": {
+								"tag": "\"spawnStars\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "addStars",
+							"sid": 806927440327598,
+							"parameters": [
+								"addStarsAmount"
+							]
+						}
+					],
+					"sid": 822779631402855
+				}
+			],
+			"sid": 295260438897211
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Menu Sound Control",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 835172521571201,
+							"parameters": {
+								"key": 77
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-silent",
+							"objectClass": "Audio",
+							"sid": 288590436017446,
+							"parameters": {
+								"mode": "toggle-silent"
+							}
+						}
+					],
+					"sid": 584499607702877
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 318271828505385,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-y"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-silent",
+							"objectClass": "Audio",
+							"sid": 987694318657712,
+							"parameters": {
+								"mode": "toggle-silent"
+							}
+						}
+					],
+					"sid": 895695363801702
+				}
+			],
+			"sid": 786450239173303
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "High-Score Data",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Get player's locally saved high-score"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 665135191379831
+						}
+					],
+					"actions": [
+						{
+							"id": "check-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 135877436502716,
+							"parameters": {
+								"key": "\"HighScore\""
+							}
+						}
+					],
+					"sid": 932911213276713
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 855779177443045,
+							"parameters": {
+								"key": "\"HighScore\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "get-item",
+							"objectClass": "LocalStorage",
+							"sid": 520883495104573,
+							"parameters": {
+								"key": "\"HighScore\""
+							}
+						}
+					],
+					"sid": 648849294567945
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "LocalStorage",
+							"sid": 920881255182188,
+							"parameters": {
+								"key": "\"HighScore\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 223722323861428,
+							"parameters": {
+								"variable": "playerHighScore",
+								"value": "int(LocalStorage.ItemValue)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lblHighScore",
+							"sid": 844844518081669,
+							"parameters": {
+								"text": "playerHighScore"
+							}
+						}
+					],
+					"sid": 661593847240831
+				}
+			],
+			"sid": 851116755784205
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player Name Data",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Get player's locally saved name"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 121194042063835
+						}
+					],
+					"actions": [
+						{
+							"id": "check-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 186791301024890,
+							"parameters": {
+								"key": "\"playerName\""
+							}
+						}
+					],
+					"sid": 992733528596643
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 364973098327739,
+							"parameters": {
+								"key": "\"playerName\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "get-item",
+							"objectClass": "LocalStorage",
+							"sid": 240260397210055,
+							"parameters": {
+								"key": "\"playerName\""
+							}
+						}
+					],
+					"sid": 557246183895127
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "LocalStorage",
+							"sid": 787187588172174,
+							"parameters": {
+								"key": "\"playerName\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 173270047451990,
+							"parameters": {
+								"variable": "playerName",
+								"value": "LocalStorage.ItemValue"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "txtName",
+							"sid": 458140324884403,
+							"parameters": {
+								"text": "playerName"
+							}
+						}
+					],
+					"sid": 825885749365803
+				}
+			],
+			"sid": 257807530705710
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Leaderboard Data",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 393480670448954
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Fetch the server for the leaderboard data"
+						},
+						{
+							"id": "request-url",
+							"objectClass": "AJAX",
+							"sid": 943264607732050,
+							"parameters": {
+								"tag": "\"getScore\"",
+								"url": "\"https://flatspace-online-default-rtdb.firebaseio.com/hiscores.json\""
+							}
+						},
+						{
+							"id": "post-to-url",
+							"objectClass": "AJAX",
+							"sid": 764940966295129,
+							"disabled": true,
+							"parameters": {
+								"tag": "\"sendScore\"",
+								"url": "\"https://flatspace-online-default-rtdb.firebaseio.com/hiscores/construct.json\"",
+								"data": "\"90\"",
+								"method": "\"PUT\""
+							}
+						}
+					],
+					"sid": 701159085031734
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-completed",
+							"objectClass": "AJAX",
+							"sid": 615582631906587,
+							"parameters": {
+								"tag": "\"getScore\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Transform AJAX data to JSON format"
+						},
+						{
+							"id": "parse",
+							"objectClass": "JSON",
+							"sid": 838930680721943,
+							"parameters": {
+								"data": "AJAX.LastData"
+							}
+						},
+						{
+							"type": "script",
+							"script": "// Get all leader board data and sort it by descending score\nconst ldata = Object.entries(runtime.objects.JSON.getFirstInstance().getJsonDataCopy()).sort(([,a],[,b])=>b-a).slice(0,10);\n\n// Set global variables to formatted names and scores, respectively\nruntime.globalVars.leaderboardNames = ldata.reduce((p,n)=>p+`${n[0]}\\n`,\"\");\nruntime.globalVars.leaderboardScores = ldata.reduce((p,n)=>p+`${n[1]}\\n`,\"\");"
+						},
+						{
+							"type": "comment",
+							"text": "Set labels to leaderboard data"
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lblLeaderNames",
+							"sid": 303039570935339,
+							"parameters": {
+								"text": "leaderboardNames"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lblLeaderScores",
+							"sid": 526869924740972,
+							"parameters": {
+								"text": "leaderboardScores"
+							}
+						}
+					],
+					"sid": 837768248254839
+				}
+			],
+			"sid": 954637546088945
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Leaderboard Elements",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Format elements and start animations"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 622192553182808
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Text Box"
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "txtName",
+							"sid": 855286472351296,
+							"parameters": {
+								"property-name": "\"border\"",
+								"value": "\"2px solid white\""
+							}
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "txtName",
+							"sid": 120988813385899,
+							"parameters": {
+								"property-name": "\"background\"",
+								"value": "\"#0000007f\""
+							}
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "txtName",
+							"sid": 371786463249292,
+							"parameters": {
+								"property-name": "\"font\"",
+								"value": "\"24px Play-Bold\""
+							}
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "txtName",
+							"sid": 954599126630333,
+							"parameters": {
+								"property-name": "\"color\"",
+								"value": "\"#ffffff\""
+							}
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "txtName",
+							"sid": 189033922262948,
+							"parameters": {
+								"property-name": "\"text-align\"",
+								"value": "\"center\""
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Button"
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "btnStart",
+							"sid": 107584197903464,
+							"parameters": {
+								"property-name": "\"border\"",
+								"value": "\"2px solid white\""
+							}
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "btnStart",
+							"sid": 335123453104270,
+							"parameters": {
+								"property-name": "\"background\"",
+								"value": "\"#d60f0032\""
+							}
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "btnStart",
+							"sid": 322543347089761,
+							"parameters": {
+								"property-name": "\"font\"",
+								"value": "\"24px Play-Bold\""
+							}
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "btnStart",
+							"sid": 902319135114306,
+							"parameters": {
+								"property-name": "\"color\"",
+								"value": "\"#ffffff\""
+							}
+						},
+						{
+							"type": "comment",
+							"text": "Animate elements"
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "lblTitle",
+							"sid": 143448155129998,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"moveTitle\"",
+								"property": "offsetX",
+								"end-value": "0",
+								"time": "1",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "lblInstructions",
+							"sid": 726731943549852,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"moveInstructions\"",
+								"property": "offsetX",
+								"end-value": "0+Self.type*160",
+								"time": "1",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "lblLeaderboard",
+							"sid": 838548288553564,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"moveLeaderboardTitle\"",
+								"property": "offsetX",
+								"end-value": "0",
+								"time": "1",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "leaderboardBox",
+							"sid": 444400147513100,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"moveLeaderboardBox\"",
+								"property": "offsetX",
+								"end-value": "10",
+								"time": "1",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "lblLeaderNames",
+							"sid": 859999439219791,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"moveLeaderNames\"",
+								"property": "offsetX",
+								"end-value": "20",
+								"time": "1",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "lblLeaderScores",
+							"sid": 685497198186590,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"moveLeaderScores\"",
+								"property": "offsetX",
+								"end-value": "337",
+								"time": "1",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "lblHighScore",
+							"sid": 252524960873094,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"moveHighScoreLabel\"",
+								"property": "offsetX",
+								"end-value": "10",
+								"time": "1",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "highScoreBox",
+							"sid": 412102224924799,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"moveHighScoreBox\"",
+								"property": "offsetX",
+								"end-value": "10",
+								"time": "1",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "txtName",
+							"sid": 297536200548269,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"moveTextBox\"",
+								"property": "offsetX",
+								"end-value": "10",
+								"time": "1",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "btnStart",
+							"sid": 312523248525804,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"moveButton\"",
+								"property": "offsetX",
+								"end-value": "10",
+								"time": "1",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						}
+					],
+					"sid": 782957292916109
+				},
+				{
+					"eventType": "comment",
+					"text": "After the animations are done, focus the Text Box"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "txtName",
+							"sid": 128530060582934,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"moveTextBox\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "Set Focus"
+						},
+						{
+							"id": "set-focused",
+							"objectClass": "txtName",
+							"sid": 959698512778038
+						}
+					],
+					"sid": 480569453232724
+				},
+				{
+					"eventType": "comment",
+					"text": "Prohibit Spaces and set playerName"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-text-changed",
+							"objectClass": "txtName",
+							"sid": 113557322864881
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "txtName",
+							"sid": 491475299039827,
+							"parameters": {
+								"text": "left(replace(txtName.Text, \" \", \"\"), 10)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 430951233549395,
+							"parameters": {
+								"variable": "playerName",
+								"value": "txtName.Text"
+							}
+						}
+					],
+					"sid": 309781728268483
+				},
+				{
+					"eventType": "comment",
+					"text": "Go to the game"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-clicked",
+							"objectClass": "btnStart",
+							"sid": 669931952307895
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 562641473872879,
+							"parameters": {
+								"key": 13
+							}
+						},
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 626560185211556,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-a"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 525227399956206,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 385328304052144,
+									"parameters": {
+										"variable": "playerName",
+										"comparison": 1,
+										"value": "\"\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout-by-name",
+									"objectClass": "System",
+									"sid": 932277257671481,
+									"parameters": {
+										"layout": "\"Game\""
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "LocalStorage",
+									"sid": 154289901630393,
+									"parameters": {
+										"key": "\"playerName\"",
+										"value": "playerName"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 941265825664819,
+									"parameters": {
+										"audio-file": "gmaj",
+										"loop": "not-looping",
+										"volume": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 709811168010091
+						}
+					],
+					"isOrBlock": true
+				}
+			],
+			"sid": 341691290416835
+		}
+	],
+	"sid": 153004473454489
+}

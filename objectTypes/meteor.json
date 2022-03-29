@@ -1,0 +1,134 @@
+{
+	"name": "Meteor",
+	"plugin-id": "Sprite",
+	"sid": 276573722792608,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "type",
+			"type": "number",
+			"desc": "Type of the meteor",
+			"sid": 141825764783202
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Rotate",
+			"name": "Rotate",
+			"sid": 640887239820956
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4010068,
+						"collisionPoly": {
+							"points": [
+								0.3125000000000001,
+								0.31250000000000017,
+								0.5,
+								0.25,
+								0.6875,
+								0.3125,
+								0.75,
+								0.5,
+								0.6875,
+								0.6875,
+								0.5,
+								0.75,
+								0.3125,
+								0.6875,
+								0.25,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2884845,
+						"collisionPoly": {
+							"points": [
+								0.28125,
+								0.28125,
+								0.5,
+								0.21875,
+								0.71875,
+								0.28125,
+								0.78125,
+								0.5,
+								0.71875,
+								0.71875,
+								0.49921875,
+								0.78125,
+								0.28125,
+								0.71875,
+								0.21796875,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4537484,
+						"collisionPoly": {
+							"points": [
+								0.265625,
+								0.265625,
+								0.5,
+								0.15625,
+								0.734375,
+								0.265625,
+								0.84375,
+								0.5,
+								0.734375,
+								0.734375,
+								0.5,
+								0.84375,
+								0.265625,
+								0.734375,
+								0.15625,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 345356165881614,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			}
+		],
+		"subfolders": []
+	}
+}

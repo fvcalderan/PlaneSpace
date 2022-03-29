@@ -1,0 +1,15 @@
+{
+	"name": "lblPowerUp",
+	"plugin-id": "Text",
+	"sid": 650391012069153,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 656739620250199
+		}
+	],
+	"effectTypes": []
+}

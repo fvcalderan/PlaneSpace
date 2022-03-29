@@ -1,0 +1,15 @@
+{
+	"name": "lblGameInstructions",
+	"plugin-id": "Text",
+	"sid": 908512017791176,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 154595282358950
+		}
+	],
+	"effectTypes": []
+}

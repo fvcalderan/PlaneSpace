@@ -1,0 +1,22 @@
+{
+	"name": "lblInstructions",
+	"plugin-id": "Text",
+	"sid": 948418022569838,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "type",
+			"type": "number",
+			"desc": "",
+			"sid": 156431928741892
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 328742623013285
+		}
+	],
+	"effectTypes": []
+}
