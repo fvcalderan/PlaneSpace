@@ -107,6 +107,146 @@
 			"subLayers": [],
 			"instances": [
 				{
+					"type": "subTitleBox",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 59,
+					"instanceVariables": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"template": {
+						"mode": "none",
+						"templateName": "",
+						"sourceTemplateName": "",
+						"components": [
+							{
+								"id": "plugin",
+								"component": "[{\"key\":\"plugin\",\"state\":\"[[\\\"initially-visible\\\",true],[\\\"initial-animation\\\",true],[\\\"initial-frame\\\",true],[\\\"enable-collisions\\\",true]]\"}]"
+							},
+							{
+								"id": "instance-variable",
+								"component": "[{\"key\":\"instance-variable\",\"state\":\"[]\"}]"
+							},
+							{
+								"id": "behavior",
+								"component": "[{\"key\":\"Tween\",\"state\":\"[[\\\"enabled\\\",true]]\"}]"
+							},
+							{
+								"id": "effect",
+								"component": "[]"
+							},
+							{
+								"id": "world-instance",
+								"component": "[{\"key\":\"world-instance\",\"state\":\"[[\\\"x\\\",false],[\\\"y\\\",false],[\\\"z\\\",true],[\\\"w\\\",true],[\\\"h\\\",true],[\\\"a\\\",true],[\\\"o\\\",true],[\\\"c\\\",true],[\\\"sx\\\",true],[\\\"sy\\\",true],[\\\"bm\\\",true]]\"}]"
+							}
+						]
+					},
+					"world": {
+						"x": 510,
+						"y": 82,
+						"width": 460,
+						"height": 40,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "lblTitle",
+					"properties": {
+						"text": "By fvcalderan",
+						"enable-bbcode": true,
+						"font": "Play-Bold",
+						"size": 24,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							0.6352941176470588,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 58,
+					"instanceVariables": {
+						"isShadow": true,
+						"isSub": true
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"template": {
+						"mode": "none",
+						"templateName": "",
+						"sourceTemplateName": "",
+						"components": [
+							{
+								"id": "plugin",
+								"component": "[{\"key\":\"plugin\",\"state\":\"[[\\\"text\\\",true],[\\\"enable-bbcode\\\",true],[\\\"font\\\",true],[\\\"size\\\",true],[\\\"line-height\\\",true],[\\\"bold\\\",true],[\\\"italic\\\",true],[\\\"color\\\",true],[\\\"horizontal-alignment\\\",true],[\\\"vertical-alignment\\\",true],[\\\"wrapping\\\",true],[\\\"initially-visible\\\",true],[\\\"origin\\\",true]]\"}]"
+							},
+							{
+								"id": "instance-variable",
+								"component": "[{\"key\":\"instance-variable\",\"state\":\"[{\\\"iv\\\":\\\"isShadow\\\",\\\"state\\\":true},{\\\"iv\\\":\\\"isSub\\\",\\\"state\\\":true}]\"}]"
+							},
+							{
+								"id": "behavior",
+								"component": "[{\"key\":\"Tween\",\"state\":\"[[\\\"enabled\\\",true]]\"}]"
+							},
+							{
+								"id": "effect",
+								"component": "[]"
+							},
+							{
+								"id": "world-instance",
+								"component": "[{\"key\":\"world-instance\",\"state\":\"[[\\\"x\\\",false],[\\\"y\\\",false],[\\\"z\\\",true],[\\\"w\\\",true],[\\\"h\\\",true],[\\\"a\\\",true],[\\\"o\\\",true],[\\\"c\\\",true],[\\\"sx\\\",true],[\\\"sy\\\",true],[\\\"bm\\\",true]]\"}]"
+							}
+						]
+					},
+					"world": {
+						"x": 510,
+						"y": 83,
+						"width": 463,
+						"height": 36,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "lblInstructions",
 					"properties": {
 						"text": "Pad:",
@@ -167,8 +307,8 @@
 						]
 					},
 					"world": {
-						"x": 820,
-						"y": 81,
+						"x": -186,
+						"y": 138,
 						"width": 165,
 						"height": 119,
 						"originX": 0,
@@ -244,8 +384,8 @@
 						]
 					},
 					"world": {
-						"x": 660,
-						"y": 81,
+						"x": -346,
+						"y": 138,
 						"width": 165,
 						"height": 119,
 						"originX": 0,
@@ -321,8 +461,8 @@
 						]
 					},
 					"world": {
-						"x": 500,
-						"y": 81,
+						"x": -506,
+						"y": 138,
 						"width": 165,
 						"height": 119,
 						"originX": 0,
@@ -340,7 +480,7 @@
 				{
 					"type": "lblLeaderboard",
 					"properties": {
-						"text": "Your High-Score:",
+						"text": "Your HighScore:",
 						"enable-bbcode": true,
 						"font": "Play-Bold",
 						"size": 24,
@@ -396,9 +536,9 @@
 						]
 					},
 					"world": {
-						"x": 500,
-						"y": 626,
-						"width": 485,
+						"x": 506,
+						"y": 674,
+						"width": 273,
 						"height": 46,
 						"originX": 0,
 						"originY": 0,
@@ -459,7 +599,7 @@
 					},
 					"world": {
 						"x": -500,
-						"y": 208,
+						"y": 250,
 						"width": 460,
 						"height": 410,
 						"originX": 0,
@@ -534,7 +674,7 @@
 					},
 					"world": {
 						"x": -500,
-						"y": 217,
+						"y": 259,
 						"width": 485,
 						"height": 36,
 						"originX": 0,
@@ -572,7 +712,10 @@
 						"origin": "top-left"
 					},
 					"uid": 34,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"isShadow": true,
+						"isSub": false
+					},
 					"behaviors": {
 						"Tween": {
 							"properties": {
@@ -591,7 +734,7 @@
 							},
 							{
 								"id": "instance-variable",
-								"component": "[{\"key\":\"instance-variable\",\"state\":\"[]\"}]"
+								"component": "[{\"key\":\"instance-variable\",\"state\":\"[{\\\"iv\\\":\\\"isShadow\\\",\\\"state\\\":true},{\\\"iv\\\":\\\"isSub\\\",\\\"state\\\":true}]\"}]"
 							},
 							{
 								"id": "behavior",
@@ -610,8 +753,8 @@
 					"world": {
 						"x": 500,
 						"y": 2,
-						"width": 489.0909090909091,
-						"height": 77.27272727272728,
+						"width": 390,
+						"height": 78,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -647,7 +790,10 @@
 						"origin": "top-left"
 					},
 					"uid": 33,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"isShadow": false,
+						"isSub": false
+					},
 					"behaviors": {
 						"Tween": {
 							"properties": {
@@ -666,7 +812,7 @@
 							},
 							{
 								"id": "instance-variable",
-								"component": "[{\"key\":\"instance-variable\",\"state\":\"[]\"}]"
+								"component": "[{\"key\":\"instance-variable\",\"state\":\"[{\\\"iv\\\":\\\"isShadow\\\",\\\"state\\\":true},{\\\"iv\\\":\\\"isSub\\\",\\\"state\\\":true}]\"}]"
 							},
 							{
 								"id": "behavior",
@@ -685,7 +831,7 @@
 					"world": {
 						"x": 500,
 						"y": 2,
-						"width": 480,
+						"width": 379,
 						"height": 70,
 						"originX": 0,
 						"originY": 0,
@@ -759,7 +905,7 @@
 					},
 					"world": {
 						"x": -500,
-						"y": 217,
+						"y": 259,
 						"width": 480,
 						"height": 32,
 						"originX": 0,
@@ -894,7 +1040,7 @@
 					},
 					"world": {
 						"x": -500,
-						"y": 250,
+						"y": 292,
 						"width": 314,
 						"height": 363,
 						"originX": 0,
@@ -969,7 +1115,7 @@
 					},
 					"world": {
 						"x": -183.00000000000023,
-						"y": 250,
+						"y": 292,
 						"width": 123,
 						"height": 363,
 						"originX": 0,
@@ -1033,7 +1179,7 @@
 					},
 					"world": {
 						"x": -500,
-						"y": 733,
+						"y": 735,
 						"width": 460,
 						"height": 45,
 						"originX": 0,
@@ -1109,7 +1255,7 @@
 				{
 					"type": "lblLeaderboard",
 					"properties": {
-						"text": "Your High-Score:",
+						"text": "Your HighScore:",
 						"enable-bbcode": true,
 						"font": "Play-Bold",
 						"size": 24,
@@ -1165,9 +1311,9 @@
 						]
 					},
 					"world": {
-						"x": 500,
-						"y": 626,
-						"width": 480,
+						"x": 506,
+						"y": 674,
+						"width": 268,
 						"height": 42,
 						"originX": 0,
 						"originY": 0,
@@ -1227,9 +1373,9 @@
 						]
 					},
 					"world": {
-						"x": 500,
-						"y": 673,
-						"width": 460,
+						"x": 779,
+						"y": 677,
+						"width": 194,
 						"height": 40,
 						"originX": 0,
 						"originY": 0,
@@ -1302,9 +1448,9 @@
 						]
 					},
 					"world": {
-						"x": 500,
-						"y": 673.364951393821,
-						"width": 458.18181818181813,
+						"x": 779,
+						"y": 677,
+						"width": 192.18181818181813,
 						"height": 39,
 						"originX": 0,
 						"originY": 0,
@@ -1379,8 +1525,8 @@
 						]
 					},
 					"world": {
-						"x": 500,
-						"y": 81,
+						"x": -505,
+						"y": 136,
 						"width": 160,
 						"height": 115,
 						"originX": 0,
@@ -1456,8 +1602,8 @@
 						]
 					},
 					"world": {
-						"x": 820,
-						"y": 81,
+						"x": -185,
+						"y": 136,
 						"width": 160,
 						"height": 115,
 						"originX": 0,
@@ -1533,10 +1679,152 @@
 						]
 					},
 					"world": {
-						"x": 660,
-						"y": 81,
+						"x": -345,
+						"y": 136,
 						"width": 160,
 						"height": 115,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "muteButton",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "type",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 55,
+					"instanceVariables": {
+						"type": 0
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"template": {
+						"mode": "none",
+						"templateName": "",
+						"sourceTemplateName": "",
+						"components": [
+							{
+								"id": "plugin",
+								"component": "[{\"key\":\"plugin\",\"state\":\"[[\\\"initially-visible\\\",true],[\\\"initial-animation\\\",true],[\\\"initial-frame\\\",true],[\\\"enable-collisions\\\",true]]\"}]"
+							},
+							{
+								"id": "instance-variable",
+								"component": "[{\"key\":\"instance-variable\",\"state\":\"[{\\\"iv\\\":\\\"type\\\",\\\"state\\\":true}]\"}]"
+							},
+							{
+								"id": "behavior",
+								"component": "[{\"key\":\"Tween\",\"state\":\"[[\\\"enabled\\\",true]]\"}]"
+							},
+							{
+								"id": "effect",
+								"component": "[]"
+							},
+							{
+								"id": "world-instance",
+								"component": "[{\"key\":\"world-instance\",\"state\":\"[[\\\"x\\\",false],[\\\"y\\\",false],[\\\"z\\\",true],[\\\"w\\\",true],[\\\"h\\\",true],[\\\"a\\\",true],[\\\"o\\\",true],[\\\"c\\\",true],[\\\"sx\\\",true],[\\\"sy\\\",true],[\\\"bm\\\",true]]\"}]"
+							}
+						]
+					},
+					"world": {
+						"x": 918,
+						"y": 6,
+						"width": 64,
+						"height": 64,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							0.5
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "lblTitle",
+					"properties": {
+						"text": "By fvcalderan",
+						"enable-bbcode": true,
+						"font": "Play-Bold",
+						"size": 24,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"initially-visible": true,
+						"origin": "top-left"
+					},
+					"uid": 57,
+					"instanceVariables": {
+						"isShadow": false,
+						"isSub": true
+					},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"template": {
+						"mode": "none",
+						"templateName": "",
+						"sourceTemplateName": "",
+						"components": [
+							{
+								"id": "plugin",
+								"component": "[{\"key\":\"plugin\",\"state\":\"[[\\\"text\\\",true],[\\\"enable-bbcode\\\",true],[\\\"font\\\",true],[\\\"size\\\",true],[\\\"line-height\\\",true],[\\\"bold\\\",true],[\\\"italic\\\",true],[\\\"color\\\",true],[\\\"horizontal-alignment\\\",true],[\\\"vertical-alignment\\\",true],[\\\"wrapping\\\",true],[\\\"initially-visible\\\",true],[\\\"origin\\\",true]]\"}]"
+							},
+							{
+								"id": "instance-variable",
+								"component": "[{\"key\":\"instance-variable\",\"state\":\"[{\\\"iv\\\":\\\"isShadow\\\",\\\"state\\\":true},{\\\"iv\\\":\\\"isSub\\\",\\\"state\\\":true}]\"}]"
+							},
+							{
+								"id": "behavior",
+								"component": "[{\"key\":\"Tween\",\"state\":\"[[\\\"enabled\\\",true]]\"}]"
+							},
+							{
+								"id": "effect",
+								"component": "[]"
+							},
+							{
+								"id": "world-instance",
+								"component": "[{\"key\":\"world-instance\",\"state\":\"[[\\\"x\\\",false],[\\\"y\\\",false],[\\\"z\\\",true],[\\\"w\\\",true],[\\\"h\\\",true],[\\\"a\\\",true],[\\\"o\\\",true],[\\\"c\\\",true],[\\\"sx\\\",true],[\\\"sy\\\",true],[\\\"bm\\\",true]]\"}]"
+							}
+						]
+					},
+					"world": {
+						"x": 510,
+						"y": 83,
+						"width": 458,
+						"height": 31,
 						"originX": 0,
 						"originY": 0,
 						"color": [

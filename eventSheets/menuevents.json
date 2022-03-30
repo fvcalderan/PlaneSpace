@@ -256,6 +256,76 @@
 						}
 					],
 					"sid": 895695363801702
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 601525387793302,
+							"parameters": {
+								"object": "muteButton"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-silent",
+							"objectClass": "Audio",
+							"sid": 519650915773395,
+							"parameters": {
+								"mode": "toggle-silent"
+							}
+						}
+					],
+					"sid": 803895375839317
+				},
+				{
+					"eventType": "comment",
+					"text": "Change Mute Button animation frame"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-silent",
+							"objectClass": "Audio",
+							"sid": 969138796611224
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "muteButton",
+							"sid": 664560307840158,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 280061492410729
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 433464722024128
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "muteButton",
+							"sid": 652773552424415,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 167806597837940
 				}
 			],
 			"sid": 786450239173303
@@ -553,6 +623,134 @@
 			"children": [
 				{
 					"eventType": "comment",
+					"text": "Hide mute button and make title centered if not on mobile"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-mobile",
+							"objectClass": "PlatformInfo",
+							"sid": 926739557403196,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "muteButton",
+							"sid": 400172727962572,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 115628678288141,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 928839107937767,
+									"parameters": {
+										"object": "lblTitle"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 144094853882705,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "lblTitle",
+											"sid": 129898640313654,
+											"parameters": {
+												"instance-variable": "isShadow"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 794346192981275,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "lblTitle",
+													"sid": 550985620518257,
+													"parameters": {
+														"instance-variable": "isSub"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-width",
+													"objectClass": "lblTitle",
+													"sid": 820164804348993,
+													"parameters": {
+														"width": "485"
+													}
+												}
+											],
+											"sid": 258681569585722
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 544128409464668
+												}
+											],
+											"actions": [
+												{
+													"id": "set-width",
+													"objectClass": "lblTitle",
+													"sid": 321686001930790,
+													"parameters": {
+														"width": "490"
+													}
+												}
+											],
+											"sid": 919958793439487
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 220713249409869
+										}
+									],
+									"actions": [
+										{
+											"id": "set-width",
+											"objectClass": "lblTitle",
+											"sid": 495697842355644,
+											"parameters": {
+												"width": "480"
+											}
+										}
+									],
+									"sid": 644609359508758
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "comment",
 					"text": "Format elements and start animations"
 				},
 				{
@@ -676,6 +874,38 @@
 						},
 						{
 							"id": "tween-one-property",
+							"objectClass": "subTitleBox",
+							"sid": 130765579228466,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"moveSubTitleBox\"",
+								"property": "offsetX",
+								"end-value": "10",
+								"time": "1",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "muteButton",
+							"sid": 194209862382296,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"moveMute\"",
+								"property": "offsetX",
+								"end-value": "410",
+								"time": "1",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						},
+						{
+							"id": "tween-one-property",
 							"objectClass": "lblInstructions",
 							"sid": 726731943549852,
 							"behaviorType": "Tween",
@@ -757,12 +987,12 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "lblHighScore",
-							"sid": 252524960873094,
+							"sid": 544313627873235,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"moveHighScoreLabel\"",
 								"property": "offsetX",
-								"end-value": "10",
+								"end-value": "276",
 								"time": "1",
 								"ease": "easeinsine",
 								"destroy-on-complete": "no",
@@ -773,12 +1003,12 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "highScoreBox",
-							"sid": 412102224924799,
+							"sid": 586901716193144,
 							"behaviorType": "Tween",
 							"parameters": {
 								"tags": "\"moveHighScoreBox\"",
 								"property": "offsetX",
-								"end-value": "10",
+								"end-value": "276",
 								"time": "1",
 								"ease": "easeinsine",
 								"destroy-on-complete": "no",

@@ -1,5 +1,5 @@
 {
-	"name": "leaderboardButton",
+	"name": "muteButton",
 	"plugin-id": "Sprite",
 	"sid": 722718261279542,
 	"isGlobal": false,
@@ -11,12 +11,42 @@
 			"sid": 201652651363061
 		}
 	],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 431265931252664
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1714628,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 64,
+						"height": 64,
+						"originX": 0,
+						"originY": 0,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9364567,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
 					{
 						"width": 64,
 						"height": 64,
@@ -60,7 +90,7 @@
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 5
+				"speed": 0
 			}
 		],
 		"subfolders": []

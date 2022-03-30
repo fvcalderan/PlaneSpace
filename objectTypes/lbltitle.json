@@ -3,7 +3,20 @@
 	"plugin-id": "Text",
 	"sid": 214253401127624,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "isShadow",
+			"type": "boolean",
+			"desc": "",
+			"sid": 640149660264110
+		},
+		{
+			"name": "isSub",
+			"type": "boolean",
+			"desc": "",
+			"sid": 279109057191259
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "Tween",

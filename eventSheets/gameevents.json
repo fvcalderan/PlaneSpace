@@ -995,6 +995,14 @@
 									"id": "destroy",
 									"objectClass": "rightButton",
 									"sid": 135305283863723
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "muteButton",
+									"sid": 632868871405558,
+									"parameters": {
+										"visibility": "invisible"
+									}
 								}
 							],
 							"sid": 238110660750626
@@ -2729,6 +2737,76 @@
 						}
 					],
 					"sid": 811825539307173
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-touched-object",
+							"objectClass": "Touch",
+							"sid": 472957538022136,
+							"parameters": {
+								"object": "muteButton"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-silent",
+							"objectClass": "Audio",
+							"sid": 240165591727093,
+							"parameters": {
+								"mode": "toggle-silent"
+							}
+						}
+					],
+					"sid": 522274358179462
+				},
+				{
+					"eventType": "comment",
+					"text": "Change Mute Button animation frame"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-silent",
+							"objectClass": "Audio",
+							"sid": 969138796611224
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "muteButton",
+							"sid": 664560307840158,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 280061492410729
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 433464722024128
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "muteButton",
+							"sid": 652773552424415,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 167806597837940
 				}
 			],
 			"sid": 460844338731302

@@ -294,8 +294,9 @@
 					"btnStart",
 					"highScoreBox",
 					"lblHighScore",
-					"leaderboardButton",
-					"lblInstructions"
+					"muteButton",
+					"lblInstructions",
+					"subTitleBox"
 				],
 				"subfolders": [],
 				"name": "Menu"
@@ -416,25 +417,9 @@
 		"icon": {
 			"items": [
 				{
-					"name": "loading-logo.png",
-					"type": "image/png",
-					"sid": 460916910200746,
-					"icon-info": {
-						"purpose": "loading-logo"
-					}
-				},
-				{
-					"name": "icon-128.png",
-					"type": "image/png",
-					"sid": 435600021430720,
-					"icon-info": {
-						"purpose": "app-icon"
-					}
-				},
-				{
 					"name": "icon-16.png",
 					"type": "image/png",
-					"sid": 861861676084732,
+					"sid": 568025491599408,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
@@ -442,7 +427,7 @@
 				{
 					"name": "icon-32.png",
 					"type": "image/png",
-					"sid": 183960365329312,
+					"sid": 847296971544922,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
@@ -450,15 +435,15 @@
 				{
 					"name": "icon-64.png",
 					"type": "image/png",
-					"sid": 300590670302141,
+					"sid": 744098370278314,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
 				},
 				{
-					"name": "icon-512.png",
+					"name": "icon-128.png",
 					"type": "image/png",
-					"sid": 929796860725425,
+					"sid": 363885979077242,
 					"icon-info": {
 						"purpose": "app-icon"
 					}
@@ -466,9 +451,25 @@
 				{
 					"name": "icon-256.png",
 					"type": "image/png",
-					"sid": 312777697839283,
+					"sid": 333374183335155,
 					"icon-info": {
 						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 706620004879985,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 473174875568571,
+					"icon-info": {
+						"purpose": "loading-logo"
 					}
 				}
 			],
@@ -534,7 +535,7 @@
 		"renderingMode": "auto",
 		"anisotropicFiltering": "auto",
 		"maxSpriteSheetSize": 2048,
-		"loaderStyle": "splash",
+		"loaderStyle": "progress-logo",
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https"
