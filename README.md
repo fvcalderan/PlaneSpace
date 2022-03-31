@@ -20,12 +20,12 @@ Instead of reading this boring README, why don't you [play the game](https://pla
 Keyboard:
 - Left Arrow / Right Arrow: Move the ship
 - Space: Fire
-- M: Mute/unmute the game
+- M: Toggle mute
 
 GamePad:
 - DPad Left / DPad Right: Move the ship
 - A: Fire
-- Y: Mute/unmute the game
+- Y: Toggle mute
 
 Touch:
 - Use available on-screen controls
